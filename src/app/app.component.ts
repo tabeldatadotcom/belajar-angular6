@@ -8,16 +8,26 @@ import { Component } from '@angular/core';
 export class AppComponent {
   // ini komentar
   title: string = 'Aplikasi Perpustakaan';
-  books: string[] = ['Java', 'PHP', 'Javascript', 'Ruby', 'Swift', 'Phyton', 'Scala'];
+  books: Book[] = [
+    new Book('Java', 2017),
+    new Book('PHP', 2017),
+    new Book('Javascript', 2017),
+    new Book('Ruby', 2017),
+    new Book('Phyton', 2017),
+    new Book('C#', 2017),
+    new Book('cpp', 2017),
+  ];
 
   book: Book = new Book();
 
   kirimData(data){
     console.log(this.book);
+    this.books.push(this.book);
+    this.book = new Book();
   }
 
 }
 
 export class Book{
-  public name: string;
+  constructor(public name?: string, public tahunTerbit?: number){}
 }
