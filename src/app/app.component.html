@@ -8,8 +8,11 @@
 <h2>Here are some links to help you start: </h2>
 <ul>
   <li *ngFor="let aBook of books">
-    <span *ngIf="aBook == 'Java'">This is my favorite programing language : </span>
-    {{ aBook.name }} - {{ aBook.tahunTerbit }}
+        <span *ngIf="aBook.name == 'Java'">This is my favorite programing language : </span>
+        {{ aBook.name + ' - ' +  aBook.tahunTerbit }}
+        <span>
+          <button>Hapus</button>
+        </span>
   </li>
 </ul>
 

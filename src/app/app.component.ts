@@ -22,7 +22,9 @@ export class AppComponent {
 
   kirimData(data){
     console.log(this.book);
-    this.books.push(this.book);
+    if(this.book.name && this.book.tahunTerbit){
+      this.books.push(this.book);
+    }
     this.book = new Book();
   }
 
