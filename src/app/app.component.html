@@ -13,3 +13,12 @@
   </li>
 </ul>
 
+<form #bookForm="ngForm" (ngSubmit)="kirimData(bookForm)">
+  <div>
+    <label for="buku">Buku</label>
+    <input type="text" name="buku" id="buku" [(ngModel)]="book.name">
+  </div>
+  <div>
+    <button type="submit">Kirim</button>
+  </div>
+</form>
