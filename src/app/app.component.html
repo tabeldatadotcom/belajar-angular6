@@ -19,12 +19,15 @@
 <form #bookForm="ngForm" (ngSubmit)="kirimData(bookForm)">
   <div>
     <label for="buku">Buku</label>
-    <input type="text" name="buku" id="buku" [(ngModel)]="book.name">
+    <input type="text" name="buku" id="buku" [ngModel]="book.name">
   </div>
   <div>
       <label for="buku">tahunTerbit</label>
       <input type="number" name="tahunTerbit" id="tahunTerbit" [(ngModel)]="book.tahunTerbit">
-    </div>
+  </div>
+  <div>
+    {{ book.tahunTerbit }}
+  </div>
   <div>
     <button type="submit">Kirim</button>
   </div>
