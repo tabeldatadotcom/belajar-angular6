@@ -1,16 +1,14 @@
-import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms'
+import {BrowserModule} from '@angular/platform-browser';
+import {NgModule} from '@angular/core';
+import {FormsModule} from '@angular/forms';
 
-import { AppComponent } from './app.component';
+import {AppComponent} from './app.component';
 import {DetailComponent} from './detail/detail.component';
-import { ListComponent } from './list/list.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    DetailComponent,
-    ListComponent
+    DetailComponent
   ],
   imports: [
     BrowserModule,
@@ -19,4 +17,5 @@ import { ListComponent } from './list/list.component';
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+}
