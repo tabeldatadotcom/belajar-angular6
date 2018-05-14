@@ -1,24 +1,31 @@
 import {Component, OnInit} from '@angular/core';
 import {Master} from './master.model';
+import {MasterService} from './master.service';
 
 @Component({
   selector: 'app-master',
   templateUrl: './master.component.html'
+  // providers: [MasterService]
 })
 export class MasterComponent implements OnInit {
 
   data: Master[];
   title: string;
+  curruntValue: Master;
 
-  constructor() {
+  constructor(private _service: MasterService) {
 
   }
 
   getData(data) {
+    this._service.setTag(data.tag);
+    this._service.setId(data.id);
+    console.log(this._service.data);
     this.data.push(data);
   }
 
   ngOnInit() {
+    this.curruntValue = this._service.data;
     this.title = 'Tags';
     this.data = [
       new Master(1, 'Java'),
