@@ -9,4 +9,7 @@ export class DetailComponent {
   @Input('nilai')
   val: Master;
 
+  @Input()
+  index: string;
+
 }

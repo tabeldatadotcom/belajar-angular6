@@ -8,12 +8,14 @@ import {Master} from './master.model';
 export class MasterComponent implements OnInit {
 
   data: Master[];
+  title: string;
 
   constructor() {
 
   }
 
   ngOnInit() {
+    this.title = 'Tags';
     this.data = [
       new Master(1, 'Java'),
       new Master(2, 'PHP'),
