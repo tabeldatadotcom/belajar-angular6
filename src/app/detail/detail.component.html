@@ -1,1 +1,13 @@
-<li>{{index}} - {{val.tag}}</li>
+<form #formTag="ngForm" (ngSubmit)="kirimData(formTag)">
+  <div>
+    <label for="id">Kode</label>
+    <input type="number" name="id" id="id" [(ngModel)]="value.id"/>
+  </div>
+  <div>
+    <label for="tag">Nama Tag</label>
+    <input type="text" name="tag" id="tag" [(ngModel)]="value.tag"/>
+  </div>
+  <div>
+    <button type="submit">Kirim</button>
+  </div>
+</form>

@@ -1,5 +1,8 @@
 <h3>Master File</h3>
 <hr/>
+<div>
+  <app-detail></app-detail>
+</div>
 <ul>
-  <app-detail *ngFor="let val of data; let i = index" [nilai]="val" [index]="title"></app-detail>
+  <app-list *ngFor="let value of data" [val]="value"></app-list>
 </ul>
