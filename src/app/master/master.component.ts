@@ -14,6 +14,10 @@ export class MasterComponent implements OnInit {
 
   }
 
+  getData(data) {
+    this.data.push(data);
+  }
+
   ngOnInit() {
     this.title = 'Tags';
     this.data = [

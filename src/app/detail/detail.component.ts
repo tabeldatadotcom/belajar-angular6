@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, EventEmitter, OnInit, Output} from '@angular/core';
 import {Master} from '../master/master.model';
 
 @Component({
@@ -7,6 +7,9 @@ import {Master} from '../master/master.model';
 })
 export class DetailComponent implements OnInit {
 
+  @Output()
+  submited = new EventEmitter<Master>();
+
   value: Master;
 
   ngOnInit() {
@@ -14,7 +17,7 @@ export class DetailComponent implements OnInit {
   }
 
   kirimData(data) {
-    console.log(this.value);
+    this.submited.emit(this.value);
     this.value = new Master(null, null);
   }
 
