@@ -11,4 +11,8 @@ export class MasterService {
     return this._http.get('/api/anggota/2');
   }
 
+  getListAnggota() {
+    return this._http.get('/api/anggota/');
+  }
+
 }

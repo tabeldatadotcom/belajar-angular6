@@ -9,19 +9,18 @@ import {Master} from './master.model';
 })
 export class MasterComponent implements OnInit {
 
-  anggota: Master;
+  list: Master[];
 
 
   constructor(private _service: MasterService) {
-    this.anggota = new Master();
+    this.list = [];
   }
 
 
   ngOnInit() {
-    this._service.getAnggota()
-      .subscribe((dataResponse: Master) => {
-        this.anggota = dataResponse;
-      });
+    this._service.getListAnggota().subscribe((data: Master[]) => {
+      this.list = data;
+    });
 
   }
 }
