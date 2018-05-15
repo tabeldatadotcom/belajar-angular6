@@ -25,11 +25,10 @@ export class MasterComponent implements OnInit {
 
   ngOnInit() {
     this.loadData();
-
   }
 
-  saveData() {
-    const anggota = {nama: 'Yusuf', tanggalLahir: new Date(), alamat: 'bandung', kode: null};
+  saveData(anggota) {
+    anggota.tanggalLahir = new Date();
     this._service.saveAnggota(anggota).subscribe(
       data => {
         console.log(data);
