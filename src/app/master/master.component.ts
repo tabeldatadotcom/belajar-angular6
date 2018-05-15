@@ -16,21 +16,26 @@ export class MasterComponent implements OnInit {
     this.list = [];
   }
 
-
-  ngOnInit() {
+  loadData() {
     this._service.getListAnggota().subscribe((data: Master[]) => {
       this.list = data;
     });
+  }
+
+
+  ngOnInit() {
+    this.loadData();
 
   }
 
   saveData() {
-    this._service.saveAnggota(
-      {nama: 'Yusuf', tanggalLahir: new Date(), alamat: 'bandung', kode: '1'}
-    ).subscribe(data => {
-      console.log(data);
-    }, error => {
-      console.log(error);
-    });
+    const anggota = {nama: 'Yusuf', tanggalLahir: new Date(), alamat: 'bandung', kode: null};
+    this._service.saveAnggota(anggota).subscribe(
+      data => {
+        console.log(data);
+        this.loadData();
+      }, error => {
+        console.log('Error coba lagi di lain waktu!');
+      });
   }
 }

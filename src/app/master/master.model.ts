@@ -1,6 +1,6 @@
 export class Master {
 
-  kode: string;
+  kode: number;
   nama: string;
   alamat: string;
   tanggalLahir: Date;
