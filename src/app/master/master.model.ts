@@ -1,6 +1,8 @@
 export class Master {
 
-  constructor(public id: number, public tag: string) {
-  }
+  kode: string;
+  nama: string;
+  alamat: string;
+  tanggalLahir: Date;
 
 }
