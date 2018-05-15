@@ -23,4 +23,14 @@ export class MasterComponent implements OnInit {
     });
 
   }
+
+  saveData() {
+    this._service.saveAnggota(
+      {nama: 'Yusuf', tanggalLahir: new Date(), alamat: 'bandung', kode: '1'}
+    ).subscribe(data => {
+      console.log(data);
+    }, error => {
+      console.log(error);
+    });
+  }
 }
